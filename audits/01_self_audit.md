@@ -16,7 +16,7 @@ What was rerun on 2026-11-14: the fake-data test (`dev/check_fake_bhc_measures.p
 | 2 | **The proposal's threats table claims checks that weren't done:** "banks under $1B are excluded" (no such filter), link checks "against SEC 10-K filings" (we used NIC and FDIC records), regressions "with and without SIVB" (not in `specs_tried.md`). | Real | Open (B2) |
 | 3 | The proposal has a blank placeholder ("TEAM HYPOTHESIS AND THOUGHTS") and no heading on the dashboard-mockup section. | Real | Open (B2) |
 | 4 | The proposal was a notebook (`TeamHelbleProposal.ipynb`) with the mockup embedded inside it; HW8 asks for `PROPOSAL.md` with images saved as files in the repo. | Real | Fixed (B1) |
-| 5 | **The dashboard is not live on the web**; the README says "hosted link TBD". | Real | Open (B2) |
+| 5 | **The dashboard was not live on the web**; the README said "hosted link TBD". | Real | Fixed 11/14 (B1) |
 | 6 | `app.py` crashes on Streamlit 1.48 and older (`width="content"` at line 96), and `requirements.txt` did not set a version. | Real | Fixed (B1) |
 | 7 | This audit said `n_est_days` = 250; `outputs/car_0_2.csv` says 251. | Real (docs only) | Fixed (B1) |
 | 8 | **SIVB is in the regression with a one-day CAR, and it is the failing bank itself.** It has by far the largest loss ratio (0.98) and uninsured share (0.94), so with N = 12 it can drive the slopes. | Real | Open (B2) |
@@ -43,13 +43,14 @@ What was rerun on 2026-11-14: the fake-data test (`dev/check_fake_bhc_measures.p
 - `requirements.txt` now requires `streamlit>=1.49`, checked against 1.48 (fails), 1.49, 1.50 and 1.67 (all four tabs render, no errors) (finding 6).
 - `n_est_days` corrected to 251 in this audit (finding 7).
 - This audit restructured to the HW8 format.
+- Dashboard live at https://team-helble-final-v0.streamlit.app/, linked at the top of the README (finding 5). Deployed from Lucas's fork because Streamlit Community Cloud needs repo admin, which a personal-account repo can't grant to collaborators.
 
 ### B2. Still open, with the plan
 
 | Item | Plan | Who / when |
 |---|---|---|
 | Proposal disagrees with the code, claims checks not done, has a blank section (findings 1–3) | The team edits `PROPOSAL.md` so the method and threats match the repo, or says clearly what is planned for v1 and not yet done. Fill in the hypothesis section. Written by the team, not an agent (HW8). | Team, before submitting HW8 (Nov 14) |
-| Dashboard not live (finding 5) | Deploy `app.py` on Streamlit Community Cloud once Lucas has repo admin; put the link at the top of the README. | Mithran / Lucas, Nov 14 |
+| Dashboard runs from Lucas's fork, not the team repo | Sync the fork after each merge to `main`. Mithran (repo owner) redeploys from the team repo so it updates on its own. | Mithran, by Nov 21 |
 | Skeptical review prompt | Rerun the exact Quick Reference prompt #5 and add new findings to part A. | Before the PR is final |
 | SIVB drives the regression (finding 8) | In v1, report the main spec with and without SIVB and log both in `specs_tried.md`. | v1, Nov 21 |
 | No hand check of a CAR (finding 9) | Recompute one bank's `car_0_2` (e.g. KEY) by hand in a spreadsheet from its CRSP rows and SPY, and record it in `audits/`. | v1, Nov 21 |
