@@ -111,7 +111,7 @@ python dev/check_fake_bhc_measures.py   # compares to hand-computed answers
 - **CAR is a sum of simple daily abnormal returns.** For very large moves (WAL fell about 64% over the window) the sum is more negative than the compounded loss; a buy-and-hold abnormal return is a possible robustness check.
 - **SIVB stopped trading after Mar 9, 2023** (halted Mar 10, then seized), so its `car_0_2` covers only day 0 (Mar 9). CRSP lists a Mar 10 return for SIVB, but it is a bid/ask quote with no trade (negative price), so `code/04_event_study.py` drops it, along with any other no-trade day. SIVB's CAR is not comparable to the other banks' three-day CARs; the `note` column in `outputs/car_0_2.csv` flags it.
 - **Entity mismatch:** the stock belongs to the holding company, but call reports are filed by the bank subsidiaries. We sum subsidiaries to the holding company using the link table.
-- **RSSD → ticker link quality:** we will report the match rate and hand-check a sample.
+- **RSSD → ticker link quality:** 12 of 12 tickers matched to the NY Fed file, and all 21 link-table rows hand-checked (NIC, or FDIC 12/31/2022 records for banks that have since closed): `audits/link_check_sheet.md`. In v1 (about 100 banks) we will report the match rate and hand-check a sample.
 - **Uninsured deposits (RCON5597)** are reported only by banks with at least $1B in assets.
 - **Illiquid small banks:** their returns are noisy, so we apply size and liquidity filters (logged in `specs_tried.md`). Matters for v1, not the 12 large v0 banks.
 - **Day 0:** decided as Mar 9 (SVB's stock crashed). Mar 10 (SVB closed) is a possible robustness check.

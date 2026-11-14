@@ -81,4 +81,4 @@ The worry was that Comerica Bank & Trust (row 4) might be owned by Comerica Bank
 
 | Reviewer | Date | Rows checked | Findings A/B/C resolved? |
 |---|---|---|---|
-| | | /21 | |
+| Lucas Koranda | 2026-11-11 (14 rows on NIC), 2026-11-14 (7 rows on FDIC evidence) | 21/21 | Yes |
