@@ -49,6 +49,7 @@ _(Real row from `outputs/analysis_sample.csv`, rebuilt 2026-11-09. Dollar amount
 DECISIONS.md                team decisions (source of truth)
 CLAUDE.md                   instructions for coding agents
 STATUS.md                   where the project stands
+PROPOSAL.md                 project proposal (HW8); images in images/
 specs_tried.md              log of every regression spec run
 run_all.py                  rebuilds every output in order (python run_all.py)
 code/                       numbered pipeline steps (run in order)
@@ -68,6 +69,7 @@ outputs/                    final datasets, tables, figures (every reported numb
 audits/                     self-audits per checkpoint, plus standalone checks (e.g. mdrm_check.md)
 app.py                      Streamlit dashboard: Introduction, Methodology, Analysis, Interactive fragility screen
 dev/                        scratch work, test helpers, and the retired yfinance script with its old price snapshot (not part of the pipeline)
+images/                     pictures used by PROPOSAL.md (dashboard mockup)
 docs/                       reference only: course instructions (docs/course/) and internal planning notes (docs/internal/)
 ```
 

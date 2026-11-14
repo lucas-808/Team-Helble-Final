@@ -19,7 +19,8 @@ Update this whenever a pipeline step is finished or blocked. Add the date and yo
 | 3 | Returns and event study (`car_0_2`) | Done 11/9 (Mithran, with Claude Code) | Switched to CRSP via WRDS for all 12 banks + SPY (`code/03_download_crsp.py`), replacing yfinance (moved to `dev/`). Matched by PERMNO via PERMCO, not ticker. Delisting returns included (SIVB's record has none). No-trade days dropped, so SIVB's CAR covers day 0 only. `outputs/car_0_2.csv`: 12 of 12 banks, source = CRSP |
 | 4 | Merge and regression | Done 11/9 (12 of 12 banks) | `outputs/analysis_sample.csv` (12 rows), regression N=12 asserted, scatter; `specs_tried.md` #3–4 (10-bank run kept as #1) |
 | 5 | Streamlit dashboard (`app.py`) | Done 11/7; hosting in progress | 4 tabs, reads only outputs/; checked all tabs and the screen filters in a browser. Streamlit Community Cloud needs repo admin to deploy: Mithran is granting Lucas admin (11/14) |
-| 6 | `run_all.py` and self-audit | Done 11/7; updated 11/9, 11/11, 11/14 | full rerun on 11/9 reproduces committed outputs. Audit open items 1, 2, 3, 5 done; 4 (AFS-to-HTM) still open |
+| 6 | `run_all.py` and self-audit | Done 11/7; updated 11/9, 11/11, 11/14 | full rerun on 11/9 reproduces committed outputs; 05–06 rerun again on 11/14. Self-audit restructured to the HW8 format on 11/14 (Lucas, with Claude Code); open items with plans in its part B2 |
+| 7 | Proposal (`PROPOSAL.md`) | Draft 11/14 (team) | Converted from the notebook on 11/14. Method and threats sections still disagree with the code; team to edit (self-audit findings 1–3) |
 
 ## Blocked / waiting on
 
@@ -28,6 +29,6 @@ Update this whenever a pipeline step is finished or blocked. Add the date and yo
 
 ## Next up
 
-- Restructure `audits/01_self_audit.md` to the v0 format: Skeptical review findings (real or not), fixed vs. open with a plan, and the 10-point checklist from `00_PROJECT_SEEDS`.
-
-- Decide how to treat losses on securities moved from AFS to HTM (Zions shows a negative HTM loss).
+- Team edits `PROPOSAL.md` so it matches the repo (self-audit findings 1–3).
+- Rerun the exact Quick Reference Skeptical review prompt and add findings to `audits/01_self_audit.md` part A.
+- v1 items with plans: `audits/01_self_audit.md` part B2.
